@@ -27,12 +27,13 @@ const verifyUser = async (payload, done) => {
   }
 }
 
+// 미들웨어 함수라 req, res, next를 인자로 받음
 export const authenticateJwt = (req, res, next) =>
   passport.authenticate("jwt", { session: false }, (error, user) => {
   if(user){
     req.user = user;
   }
-  next();
+  next(); // route 시작하게
 })(req, res, next); // 앞에 authenticate 실행되면, req, res, next 함수 실행
 
 
