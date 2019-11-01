@@ -23,13 +23,13 @@ type Post{
 }
 
 type Like{
-  id: ID! 
+  id: ID!
   user: User!
   post: Post!
 }
 
 type Comment{
-  id: ID! 
+  id: ID!
   text: String!
   user: User!
   post: Post!
@@ -42,15 +42,20 @@ type File{
 }
 
 type Room{
-  id: ID! 
+  id: ID!
   participants: [User!]!
   messages: [Message!]!
 }
 
 type Message{
-  id: ID! 
+  id: ID!
   text: String!
   from: User!
-  to: User! 
+  to: User!
   room: Room!
+}
+
+type userProfile{
+  user: User!
+  posts: [Post!]!
 }
