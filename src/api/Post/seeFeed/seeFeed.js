@@ -7,7 +7,7 @@ export default {
       const { user } = request;
       const following = await prisma
       .user({ id: user.id })
-      .following()
+      .following();
 
       return prisma.posts({
         where: {
