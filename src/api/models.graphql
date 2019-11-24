@@ -9,11 +9,16 @@ type User {
   isFollowing: Boolean!
   isSelf: Boolean!
   bio: String
-  followers: [User!]!
   following: [User!]!
+  followingCount: Int!
+  followers: [User!]!
+  followersCount: Int!
   posts: [Post!]!
+  postsCount: Int!
+  likes: [Like!]!
   comments: [Comment!]!
   rooms: [Room!]!
+  loginSecret: String!
   createdAt: String
   updatedAt: String
 }
@@ -71,13 +76,6 @@ type Message{
   from: User!
   to: User!
   room: Room!
-  createdAt: String
-  updatedAt: String
-}
-
-type userProfile{
-  user: User!
-  posts: [Post!]!
   createdAt: String
   updatedAt: String
 }
