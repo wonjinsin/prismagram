@@ -1,3 +1,4 @@
+
 type User {
   id: ID!
   avatar: String
@@ -23,7 +24,7 @@ type User {
   updatedAt: String
 }
 
-type Post{
+type Post {
   id: ID!
   location: String
   caption: String!
@@ -33,6 +34,7 @@ type Post{
   comments: [Comment!]!
   isLiked: Boolean!
   likeCount: Int!
+  commentCount: Int!
   createdAt: String
   updatedAt: String
 }
